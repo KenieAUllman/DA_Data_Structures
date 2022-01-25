@@ -1,6 +1,5 @@
 """Functions to parse a file containing student data."""
 
-
 def all_houses(filename):
     """Return a set of all house names in the given file.
 
@@ -14,10 +13,14 @@ def all_houses(filename):
     Return:
       - set[str]: a set of strings
     """
-
     houses = set()
 
-    # TODO: replace this with your code
+    cohort_data = open(filename)
+
+    for line in cohort_data:
+      house = line.rstrip().split('|')[2]
+      if house:
+        houses.add(house)
 
     return houses
 
